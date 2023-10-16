@@ -1,14 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Auth from "./pages/Auth"
+import Profile from "./pages/Profile"
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <App />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="auth" element={<Auth />} />
+          <Route path='profile' element={<Profile />} />
+          <Route path='home' element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
   </Router>
 );
 

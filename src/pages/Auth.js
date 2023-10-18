@@ -10,7 +10,7 @@ export default function HankoAuth() {
   const hanko = useMemo(() => new Hanko(hankoApi), []);
 
   const redirectAfterLogin = useCallback(() => {
-    navigate("/Home");
+    navigate("/home");
   }, [navigate]);
 
   useEffect(

@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import LogoutBtn from "../components/LogoutBtn";
 
 const Layout = () => {
   return (
@@ -21,6 +22,7 @@ const Layout = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
+        <LogoutBtn/>
       </nav>
 
       <Outlet />
